@@ -1,0 +1,15 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+html { scroll-behavior: smooth; }
+body { @apply bg-ink text-white font-sans antialiased; }
+h1,h2,h3 { @apply font-display uppercase leading-[0.92] tracking-tight; }
+:focus-visible { outline: 2px solid #c6ff1a; outline-offset: 3px; }
+.btn { @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold uppercase tracking-wide transition-colors duration-200; }
+.btn-lime { @apply bg-lime text-ink hover:bg-white; }
+.btn-line { @apply border border-white/30 text-white hover:border-lime hover:text-lime; }
+.wrap { @apply mx-auto w-full max-w-7xl px-5 md:px-8; }
+.sect { @apply py-20 md:py-28; }
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes reveal { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0); } }
+.rise { animation: rise .8s cubic-bezier(.2,.7,.2,1) both; }
+.reveal-img { animation: reveal 1.1s cubic-bezier(.7,0,.2,1) both; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .rise,.reveal-img { animation: none; } * { transition-duration: .01ms !important; } }
